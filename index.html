@@ -7,10 +7,405 @@
     <title>Name of chosen challenge</title>
 
     <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="./newtwo/css/all.css">
 </head>
-<body>
-    
-    <h2>make some magic here!!</h2>
+<body> 
+     <header>
+        <h1>circle-93 Phonie</h1>
+        <nav role="menu" data-visible="false">
+            <ul class="nav">
+
+                <li class="link"><a href="#about" class="navlink">About</a></li>
+                <li class="link"><a href="#verify" class="navlink">Verify</a></li>
+                <li class="link"><a href="#subscribe" class="navlink">Subscribe</a></li>
+                <li class="link"><a href="#contact" class="navlink">contact</a></li>
+            </ul>
+        </nav>
+        <button aria-expanded="false" role="menubar" class="mobile-nav"><span class="sr-only">menu</span></button>
+    </header>
+    <div class="container">
+        <div class="about" id="about">
+
+            <h2>Phonie</h2>
+            <div class="basic">
+                <h3>Identify telecoms carrier from a phone number</h3>
+                <ul>
+                    <li>Web page should include a form</li>
+                    <li>After typing the phone number the UI should indicate telecom carrier <a href="#subscribe">try it
+                            here</a></li>
+                </ul>
+            </div>
+            <div class="advance">
+                <h3>Advanced Features </h3>
+                <ul class="adv">
+                    <li>Add validation using pattern attribute of the form field to restrict phone numbers to a certain
+                        carrier</li>
+                    <li>Should support +234 prefix</li>
+                    <li>Show autocompletion <a href="#verify">try it here</a></li>
+                </ul>
+
+
+            </div>
+
+        </div>
+        <div class="telecom-mtn" id="verify">
+            <h4>Verify simcard Telecom carrier</h4>
+            <div class="ver-con">
+                <img src="./images/Collaboration-pana.svg" alt="" class="colba">
+                <div class="telecomm">
+                    <button class="mtn-btn tele"></button>
+                    <button class="glo-btn tele"></button>
+                    <button class="airtel-btn tele"></button>
+                    <button class="eti-btn tele"></button>
+                </div>
+            </div>
+        </div>
+        <form class="form mtn-form">
+            <!-- create a pattern in the input element that validates only mtn numbers -->
+            <!-- the pattern must accpet phone numbers starting with the following +234 | 234 | 0-->
+            <!-- write out mtn numbers format to create the pattern-->
+            <!-- the numbers after the mtn numbers format must be equal to seven -->
+            <!-- create an auto suggestion box for users to click there mtn format -->
+            <!-- the phonenumber will only submit if  it passes the the pattern check -->
+            <div class="flex">
+                <label for="telphonenumber">Enter a MTN number</label>
+                <div class="space">
+                    <input class="input" type="tel" name="telphonenumber" id="telphonenumber" inputmode="tel"
+                        autocomplete="off" pattern="(\+234|234|0)(803|806|814|810|813|814|816|703|706|903|906)[0-9]{7}"
+                        list="form-list" required>
+                    <input type="submit" value="Submit" class="verify-btn">
+                </div>
+            </div>
+            <datalist id="form-list">
+                <option>0803</option>
+                <option>0806</option>
+                <option>0814</option>
+                <option>0810</option>
+                <option>0813</option>
+                <option>0816</option>
+                <option>0703</option>
+                <option>0706</option>
+                <option>0903</option>
+                <option>0906</option>
+                <option>234803</option>
+                <option>234806</option>
+                <option>234814</option>
+                <option>234810</option>
+                <option>234813</option>
+                <option>234816</option>
+                <option>234703</option>
+                <option>234706</option>
+                <option>234903</option>
+                <option>234906</option>
+                <option>+234803</option>
+                <option>+234806</option>
+                <option>+234814</option>
+                <option>+234810</option>
+                <option>+234813</option>
+                <option>+234816</option>
+                <option>+234703</option>
+                <option>+234706</option>
+                <option>+234903</option>
+                <option>+234906</option>
+            </datalist>
+
+
+
+
+        </form>
+        <form class="form glo-form">
+            <!-- create a pattern in the input element that validates only mtn numbers -->
+            <!-- the pattern must accpet phone numbers starting with the following +234 | 234 | 0-->
+            <!-- write out mtn numbers format to create the pattern-->
+            <!-- the numbers after the mtn numbers format must be equal to seven -->
+            <!-- create an auto suggestion box for users to click there mtn format -->
+            <!-- the phonenumber will only submit if  it passes the the pattern check -->
+            <div class="flex">
+                <label for="telphonenumber">Enter a GLO number</label>
+                <div class="space">
+                    <input class="input" type="tel" name="telphonenumber" id="glophonenumber" inputmode="tel"
+                        autocomplete="off" pattern="(\+234|234|0)(805|807|811|815|705|905)[0-9]{7}" list="glo-list"
+                        required>
+                    <input type="submit" value="Submit" class="verify-btn">
+                </div>
+            </div>
+            <datalist id="glo-list">
+                <option>0805</option>
+                <option>0807</option>
+                <option>0811</option>
+                <option>0815</option>
+                <option>0705</option>
+                <option>0905</option>
+
+                <option>234805</option>
+                <option>234807</option>
+                <option>234811</option>
+                <option>234815</option>
+                <option>234705</option>
+                <option>234905</option>
+
+                <option>+234805</option>
+                <option>+234807</option>
+                <option>+234811</option>
+                <option>+234815</option>
+                <option>+234705</option>
+                <option>+234905</option>
+                <option>+234703</option>
+
+            </datalist>
+
+
+
+        </form>
+
+        <form class="form airtel-form">
+            <!-- create a pattern in the input element that validates only mtn numbers -->
+            <!-- the pattern must accpet phone numbers starting with the following +234 | 234 | 0-->
+            <!-- write out mtn numbers format to create the pattern-->
+            <!-- the numbers after the mtn numbers format must be equal to seven -->
+            <!-- create an auto suggestion box for users to click there mtn format -->
+            <!-- the phonenumber will only submit if  it passes the the pattern check -->
+            <div class="flex">
+                <label for="telphonenumber">Enter an AIRTEL number</label>
+                <div class="space">
+                    <input class="input" type="tel" name="telphonenumber" id="airphonenumber" inputmode="tel"
+                        autocomplete="off" pattern="(\+234|234|0)(802|808|812|708|701|902|901|907|912)[0-9]{7}"
+                        list="airtel-list" required>
+                    <input type="submit" value="Submit" class="verify-btn">
+                </div>
+            </div>
+            <datalist id="airtel-list">
+                <option>0802</option>
+                <option>0808</option>
+                <option>0812</option>
+                <option>0708</option>
+                <option>0701</option>
+                <option>0902</option>
+                <option>0901</option>
+                <option>0907</option>
+                <option>0912</option>
+                <option>234802</option>
+                <option>234808</option>
+                <option>234812</option>
+                <option>234708</option>
+                <option>234701</option>
+                <option>234902</option>
+                <option>234901</option>
+                <option>234907</option>
+                <option>234912</option>
+                <option>+234802</option>
+                <option>+234808</option>
+                <option>+234812</option>
+                <option>+234708</option>
+                <option>+234701</option>
+                <option>+234902</option>
+                <option>+234901</option>
+                <option>+234907</option>
+                <option>+234912</option>
+            </datalist>
+
+            <!-- <input type="submit" value="Submit"> -->
+
+        </form>
+
+        <form class="form eti-form">
+            <!-- create a pattern in the input element that validates only mtn numbers -->
+            <!-- the pattern must accpet phone numbers starting with the following +234 | 234 | 0-->
+            <!-- write out mtn numbers format to create the pattern-->
+            <!-- the numbers after the mtn numbers format must be equal to seven -->
+            <!-- create an auto suggestion box for users to click there mtn format -->
+            <!-- the phonenumber will only submit if  it passes the the pattern check -->
+            <div class="flex">
+                <label for="telphonenumber">Enter a 9mobile number</label>
+                <div class="space">
+                    <input class="input" type="tel" name="telphonenumber" id="etiphonenumber" inputmode="tel"
+                        autocomplete="off" pattern="(\+234|234|0)(809|817|818|908|909)[0-9]{7}" list="9mobile-list"
+                        required>
+                    <input type="submit" value="Submit" class="verify-btn">
+                </div>
+            </div>
+            <datalist id="9mobile-list">
+                <option>0809</option>
+                <option>0817</option>
+                <option>0818</option>
+                <option>0908</option>
+                <option>0909</option>
+
+                <option>234809</option>
+                <option>234817</option>
+                <option>234818</option>
+                <option>234908</option>
+                <option>234909</option>
+
+                <option>+234809</option>
+                <option>+234817</option>
+                <option>+234818</option>
+                <option>+234908</option>
+                <option>+234909</option>
+
+            </datalist>
+
+
+
+        </form>
+        <div id="subscribe">
+           
+            <img src="./images/Subscriber-pana.svg" alt="" class="sub-img">
+        
+            <h5 class="sign">Subscribe for newsettlers</h5>
+            <form class="subscribe form-style">
+                <label for="firstname">FIRST NAME</label>
+                <input type="text" name="firstname" id="firstname" class="margin-btn" required>
+                <label for="lastname">LAST NAME</label>
+                <input type="text" name="lastname" id="lastname" class="margin-btn" required>
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" id="email" class="margin-btn">
+
+                <label for="phonenumber">PHONE NUMBER <span class="invalid-text"></span></label>
+                <input type="tel" name="phonenumber" id="phonenumber" class="margin-btn"
+                    pattern="(\+234|234|0)(803|806|814|810|813|814|816|703|706|903|906|809|817|818|908|909|805|807|811|815|705|905|802|808|812|708|701|902|901|907)[0-9]{7}"
+                    required autocomplete="off">
+
+
+                <input type="submit" value="Subscribe" class="btn">
+
+            </form>
+        </div>
+        <div id="contact">
+            <div class="member">
+                <img src="./images/minaaa.jpeg" alt="" class="avatar">
+                <div class="details">
+                    <p class="name">Ibimina Hart</p>
+                    <p class="track">frontend developer</p>
+                    <p class="position">Team Lead</p>
+                    <div class="social">
+                        <a href="https://linkedin.com/in/ibimina-hart" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/ibimina-hart" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto: ibimina.c.hart@gmail" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://twitter.com/ibiminaaH" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+ 
+            <div class="member">
+                <img src="./images/mary.jpeg" alt="mary avatar" class="avatar">
+                <div class="details">
+                    <p class="name">Mary Sule</p>
+                    <p class="track">frontend developer</p>
+                    <p class="position">Team Member</p>
+                    <div class="social">
+
+                        <a href="https://github.com/Marysule38" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto: annabelmary38@gmail.com" target="_blank"><i
+                                class="fa-solid fa-envelope"></i></a>
+                        <a href="https://mobile.twitter.com/_sulemary" target="_blank"><i
+                                class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="member">
+                <img src="./images/eshe.jpeg" alt="eshe avatar" class="avatar">
+                <div class="details">
+                    <p class="name">Eshe Ovabor</p>
+                    <p class="track">frontend developer</p>
+                    <p class="position">Team Member</p>
+                    <div class="social">
+
+                        <a href="https://github.com/lollipopcodes" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto: eshe2012@yahoo.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                       
+                    </div>
+                </div>
+
+            </div>
+          
+            <div class="member">
+                <img src="./images/quadri.jpeg" alt="quadri avatar" class="avatar">
+                <div class="details">
+                    <p class="name">Kazeem Quadri</p>
+                    <p class="track">frontend developer</p>
+                    <p class="position">Team Member</p>
+                    <div class="social">
+
+                        <a href="https://github.com/Kezmandre/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto: Kazeemquadri75@gmail.com" target="_blank"><i
+                                class="fa-solid fa-envelope"></i></a>
+                        <a href="https://twitter.com/kezman_dre?t=YOH-jFWN7ZO-OxB_lUz-yg&s=09" target="_blank"><i
+                                class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+           <div class="member">
+                <img src="./images/obiyo.jpeg" alt="obiyo avatar" class="avatar">
+                <div class="details">
+                    <p class="name">Obiyo onyekwo</p>
+                    <p class="track">frontend developer</p>
+                    <p class="position">Team Member</p>
+                    <div class="social">
+
+                        <a href="https://github.com/obimbiyo" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto: obiyoonyekwo@gmail.com" target="_blank"><i
+                                class="fa-solid fa-envelope"></i></a>
+                        <a href="https://twitter.com/OOnyekwo?t=q54CsIytEEo9r0mjeKzqug&s=09" target="_blank"><i
+                                class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="member">
+                <img src="./images/famous.jpeg" alt="famous avatar" class="avatar">
+                <div class="details">
+                    <p class="name">Sunday Famous</p>
+                    <p class="track">frontend developer</p>
+                    <p class="position">Team Member</p>
+                    <div class="social">
+                        <a href="http://linkedin.com/in/sunday-famous-450694156" target="_blank"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="http://github.com/kperusi" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto: sundayfamous25@yahoo.com" target="_blank"><i
+                                class="fa-solid fa-envelope"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="member">
+                <img src="./images/tawio.jpeg" alt="tawio avatar" class="avatar">
+                <div class="details">
+                    <p class="name">Akinfenwa Taiwo Christopher</p>
+                    <p class="track">frontend developer</p>
+                    <p class="position">Team Member</p>
+                    <div class="social">
+
+                        <a href="https://github.com/feladev123" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto: taiwoakinfenwa2019@gmail.com" target="_blank"><i
+                                class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+            </div>
+        <div class="successful-con sub">
+            <div class="sucess">
+                <h3>Success</h3>
+                <p class="success-text">You've successfully subscribed to our newsettler</p>
+                <button class="success-btn">Got it</button>
+            </div>
+        </div>
+
+        <div class="successful-con mat">
+            <div class="sucess match">
+                <h3>Success</h3>
+                <p class="network">100% MTN match</p>
+                <button class="match-btn ">Got it</button>
+            </div>
+        </div>
+
+        <footer>copyright 2022 circle-93</footer>  
 
     <!-- // ============= EEND DO NOT EDIT ============== // -->
     <script src="index.mjs" type="module"></script>
