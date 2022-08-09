@@ -26,18 +26,7 @@ const matchPage = document.querySelector(".mat");
   
 const matchBtn = document.querySelector(".match-btn");
  
- //reset page
-   successPage.classList.add("display");
-  
-  matchPage.classList.add("display"); 
-  
-  telecomBtns[0].classList.add("active");
-
-  forms.forEach((form) => {
-  form.classList.add("display");
-});
-
-  forms[0].classList.remove("display");
+ 
  //mobile navigation segment 
 mobileToggle.addEventListener("click", (e) => {
   e.preventDefault();
@@ -61,85 +50,71 @@ mobileToggle.addEventListener("click", (e) => {
 //display the telecom carrier image
 //get the invalid text tag
 //else display invalid phonenumber
+  function removeActive() {
+    telecomBtns.forEach((btn)=>{
+      btn.classList.remove("active");
+    })
+  }
 
+  function showForm(teleCarr) {
+     forms.forEach((form) => {
+      if (form.classList.contains(teleCarr)) {
+        form.classList.remove("display");
+      }else if (!form.classList.contains(teleCarr)) {
+        form.classList.add("display");
+      }
+       })
+  }
   
 function dispalyForm(teleCarrier) {
   if (teleCarrier.classList.contains("mtn-btn")) {
-    forms.forEach((form) => {
-      if (form.classList.contains("mtn-form")) {
-        form.classList.remove("display");
-      }
-      if (!form.classList.contains("mtn-form")) {
-        form.classList.add("display");
-      }
-    });
+   removeActive()
+     teleCarrier.classList.add("active");
+    let teleCarr = "mtn-form"
+        showForm(teleCarr)
+    
   } else if (teleCarrier.classList.contains("glo-btn")) {
-    telecomBtns[0].classList.remove("active");
-    forms.forEach((form) => {
-      if (form.classList.contains("glo-form")) {
-        form.classList.remove("display");
-      }
-      if (!form.classList.contains("glo-form")) {
-        form.classList.add("display");
-      }
-    });
+    removeActive()
+    teleCarrier.classList.add("active");
+      let teleCarr = "glo-form"
+        showForm(teleCarr)
+  
   } else if (teleCarrier.classList.contains("airtel-btn")) {
-    telecomBtns[0].classList.remove("active");
-    forms.forEach((form) => {
-      if (form.classList.contains("airtel-form")) {
-        form.classList.remove("display");
-      }
-      if (!form.classList.contains("airtel-form")) {
-        form.classList.add("display");
-      }
-    });
+   removeActive()
+      teleCarrier.classList.add("active");
+      let teleCarr = "airtel-form"
+   
+    showForm(teleCarr)
+  
   } else if (teleCarrier.classList.contains("eti-btn")) {
-    // teleCarrier.classList.add("active");
-    telecomBtns[0].classList.remove("active");
-
-    forms.forEach((form) => {
-      if (form.classList.contains("eti-form")) {
-        form.classList.remove("display");
-      }
-      if (!form.classList.contains("eti-form")) {
-        form.classList.add("display");
-      }
-    });
+    removeActive()
+ teleCarrier.classList.add("active");
+      let teleCarr = "eti-form"
+    showForm(teleCarr)
+   
   }
 }
-
+     const network = document.querySelector(".network");
+function showMatchPg(carrier) {
+    matchPage.classList.remove("display");
+    network.textContent = `100% ${carrier} match`;
+}
 function submitVerifiedPh(form) {
   if (form.telphonenumber && form.classList.contains("mtn-form")) {
     let carrier = "MTN";
-  
-    matchPage.classList.remove("display");
-    const network = document.querySelector(".network");
-    network.textContent = `100% ${carrier} match`;
-
+    showMatchPg(carrier)
     form.reset();
-  } else if (form.telphonenumber && form.classList.contains("glo-form")) {
+  } else if (form.telphonenumber &&  form.classList.contains("glo-form")) {
     let carrier = "GLO";
- 
-    matchPage.classList.remove("display");
-    const network = document.querySelector(".network");
-    network.textContent = `100% ${carrier} match`;
-
+    showMatchPg(carrier)
     form.reset();
   } else if (form.telphonenumber && form.classList.contains("airtel-form")) {
     let carrier = "AIRTEL";
-  
-    matchPage.classList.remove("display");
-    const network = document.querySelector(".network");
-    network.textContent = `100% ${carrier} match`;
-
+    showMatchPg(carrier)
     form.reset();
   } else if (form.telphonenumber && form.classList.contains("eti-form")) {
     let carrier = "9MOBILE";
-
-    matchPage.classList.remove("display");
-    const network = document.querySelector(".network");
-    network.textContent = `100% ${carrier} match`;
-
+     showMatchPg(carrier)
     form.reset();
   }
 }
@@ -161,12 +136,19 @@ forms.forEach((form) => {
 });
 
 
-
 matchBtn.addEventListener("click", (e) => {
   e.preventDefault(); matchBtn.parentElement.parentElement.classList.add("display");
 });
 
 //check if input phonenumber matches the set pattern to enable telecom image
+
+  function showImg(subscribePhoneNumberEl,network) {
+    subscribePhoneNumberEl.classList.add(network);
+    subscribePhoneNumberEl.classList.remove("invalid");
+    invalidTextEl.textContent = "";
+    invalidTextEl.style.color = "";
+  }
+  
 subscribePhoneNumberEl.addEventListener("input", (e) => {
   e.preventDefault();
   let phoneNumber = e.target.value;
@@ -186,26 +168,21 @@ subscribePhoneNumberEl.addEventListener("input", (e) => {
   let etiResult = phoneNumber.match(etiPattern);
 
   if (mtnResult) {
-    console.log("mtn");
-    subscribePhoneNumberEl.classList.add("mtn");
-    subscribePhoneNumberEl.classList.remove("invalid");
-    invalidTextEl.textContent = "";
-    invalidTextEl.style.color = "";
+  let network="mtn"
+
+    showImg(subscribePhoneNumberEl,network)
   } else if (gloResult) {
-    subscribePhoneNumberEl.classList.add("glo");
-    subscribePhoneNumberEl.classList.remove("invalid");
-    invalidTextEl.textContent = "";
-    invalidTextEl.style.color = "";
+      let network="glo"
+  
+    showImg(subscribePhoneNumberEl,network)
   } else if (airtelResult) {
-    subscribePhoneNumberEl.classList.add("airtel");
-    subscribePhoneNumberEl.classList.remove("invalid");
-    invalidTextEl.textContent = "";
-    invalidTextEl.style.color = "";
+      let network="airtel"
+
+    showImg(subscribePhoneNumberEl,network)
   } else if (etiResult) {
-    subscribePhoneNumberEl.classList.add("eti");
-    subscribePhoneNumberEl.classList.remove("invalid");
-    invalidTextEl.textContent = "";
-    invalidTextEl.style.color = "";
+      let network="eti"
+   
+    showImg(subscribePhoneNumberEl,network)
   } else {
     subscribePhoneNumberEl.classList.add("invalid");
     subscribePhoneNumberEl.classList.remove("eti");
@@ -232,11 +209,6 @@ successBtn.addEventListener("click", (e) => {
   e.preventDefault(); successBtn.parentElement.parentElement.classList.add("display");
 });
 
-
-
-
-
-  
     // console.log('make magic in here!');
   
     // const header = document.querySelector('h2');

@@ -431,6 +431,10 @@ align-items: center;
 display: grid;
 grid-template-columns: repeat(3,1fr);
   }
+  .tawio{
+    grid-column:2;
+    grid-row:3;
+  }
   .avatar{
     max-width: 250px;
   }
