@@ -34,6 +34,7 @@ img,
 picture {
   max-width: 100%;
   display: block;
+ height:auto;
 }
 /* makes form easier to work with */
 input,
@@ -68,9 +69,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1.5em;
-  /* background-color: rgb(212, 209, 209); */
   color: #fff;
-  /* background-color: rgb(255, 136, 93); */
   background-color: orangered;
 }
 .mobile-nav {
@@ -102,8 +101,6 @@ nav[data-visible="true"] {
 .nav {
   list-style: none;
   background-color: orangered;
-  /* background-color: rgb(255, 136, 93); */
-  /* background-color: rgb(192, 176, 176); */
   padding: 1.6em;
   margin: 0;
   display: flex;
@@ -147,7 +144,6 @@ h5 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   border-radius: 5px;
 }
 .sign {
@@ -191,14 +187,12 @@ h5 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-color: transparent; */
 }
 .airtel-btn {
   background-image: url("./images/airtel.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-color: transparent; */
 }
 .glo-btn {
   background-image: url("./images/glo.svg");
@@ -234,7 +228,6 @@ h5 {
   border: 0;
 }
 .verify-btn {
-  /* text-align: center; */
   padding: 0.7em;
   width: 25%;
   border: 0;
@@ -285,7 +278,9 @@ h5 {
   align-items: center;
   padding: 2em;
 }
-
+#contact{
+  margin-top:3em;
+}
 .sucess {
   background-color: #fff;
   padding: 5em 1em;
@@ -312,20 +307,18 @@ h5 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   margin: 2em 0;
 }
 .avatar {
   border-radius: 50%;
-  /* height: 20%;
-  width: 40%; */
-    height: 140px;
-  width: 140px;
+   width: 140px;
+  max-height:140px;
+
 }
+
 .social {
   margin-top: 1em;
- /* max-width: 50%; */
   display: flex;
   align-items: center;
   gap: 1em;
@@ -342,7 +335,7 @@ footer {
   background-color: orangered;
   padding: 1.5em;
   color: #fff;
-  /* color: rgba(248, 246, 246, 0.5); */
+
 }
 @media (min-width: 60rem) {
   .mobile-nav{
@@ -355,7 +348,7 @@ footer {
   right: auto;
   left: auto;
   bottom: auto;
-  /* transition: transform 2s; */
+
 }
 .nav{
  padding: 0; 
@@ -391,10 +384,8 @@ align-items: center;
   width: 100%;
   max-width: 500px;
 }
-.avatar{
-  max-width: 15%;
-}
-.ibimina{
+
+.member{
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -409,11 +400,11 @@ align-items: center;
   }
   .tele {
     cursor: pointer;
-    /* transform:rotate(360deg); */
+  
   }
   .tele:hover {
     animation: move 1s linear;
-    /* transition: animation 1s ease-in; */
+   
   }
   i:hover {
     color: #000;
@@ -434,15 +425,13 @@ align-items: center;
   .verify-btn:hover {
     background-color: #000;
     transition: background-color 1s ease-in-out;
-    /* color: orangered; */
+
   }
   #contact{
 display: grid;
 grid-template-columns: repeat(3,1fr);
   }
   .avatar{
-    max-width: 200px;
-    /* width: 270px;
-    height: 200px; */
+    max-width: 250px;
   }
 }

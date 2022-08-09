@@ -4,10 +4,43 @@ function startApp() {
     // so create and use/call additional functions from here
   
     // pls remove the below and make some magic in here!
+const subscribePhoneNumberEl = document.querySelector("#phonenumber");
+  
+const invalidTextEl = document.querySelector(".invalid-text");
+  
+const successPage = document.querySelector(".sub");
+  
+const subscriptionForm = document.querySelector(".subscribe");
+  
+const successBtn = document.querySelector(".success-btn");
 
+const forms = document.querySelectorAll(".form");
+  
+const telecomBtns = document.querySelectorAll(".tele");
+  
 const nav = document.querySelector("nav");
+  
 const mobileToggle = document.querySelector(".mobile-nav");
 
+const matchPage = document.querySelector(".mat");
+  
+const matchBtn = document.querySelector(".match-btn");
+ 
+ //reset page
+   successPage.classList.add("display");
+  
+  matchPage.classList.add("display"); 
+  
+  forms[0].classList.remove("display");
+ 
+
+  telecomBtns[0].classList.add("active");
+
+  forms.forEach((form) => {
+  form.classList.add("display");
+});
+  
+ //mobile navigation segment 
 mobileToggle.addEventListener("click", (e) => {
   e.preventDefault();
   let visibility = nav.getAttribute("data-visible");
@@ -31,18 +64,7 @@ mobileToggle.addEventListener("click", (e) => {
 //get the invalid text tag
 //else display invalid phonenumber
 
-const forms = document.querySelectorAll(".form");
-const telecomBtns = document.querySelectorAll(".tele");
-
-
-telecomBtns[0].classList.add("active");
-
-
-forms.forEach((form) => {
-  form.classList.add("display");
-});
-
-forms[0].classList.remove("display");
+  
 function dispalyForm(teleCarrier) {
   if (teleCarrier.classList.contains("mtn-btn")) {
     forms.forEach((form) => {
@@ -124,7 +146,6 @@ function submitVerifiedPh(form) {
   }
 }
 
-
 telecomBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -141,25 +162,13 @@ forms.forEach((form) => {
   });
 });
 
-const matchPage = document.querySelector(".mat");
-const matchBtn = document.querySelector(".match-btn");
 
-matchPage.classList.add("display");
 
 matchBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  matchBtn.parentElement.parentElement.classList.add("display");
+  e.preventDefault(); matchBtn.parentElement.parentElement.classList.add("display");
 });
 
-const subscribePhoneNumberEl = document.querySelector("#phonenumber");
-const invalidTextEl = document.querySelector(".invalid-text");
-const successPage = document.querySelector(".sub");
-const subscriptionForm = document.querySelector(".subscribe");
-const successBtn = document.querySelector(".success-btn");
-
-successPage.classList.add("display");
-
+//check if input phonenumber matches the set pattern to enable telecom image
 subscribePhoneNumberEl.addEventListener("input", (e) => {
   e.preventDefault();
   let phoneNumber = e.target.value;
@@ -211,22 +220,18 @@ subscribePhoneNumberEl.addEventListener("input", (e) => {
 });
 
 
-
+//function to handle subscription form
 subscriptionForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
-
   subscriptionForm.reset();
   subscribePhoneNumberEl.setAttribute("class","margin-btn")
   successPage.classList.remove("display");
 });
 
 
-
+//remove success page after a successful match of phonenumber
 successBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  successBtn.parentElement.parentElement.classList.add("display");
+  e.preventDefault(); successBtn.parentElement.parentElement.classList.add("display");
 });
 
 

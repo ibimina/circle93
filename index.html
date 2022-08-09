@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name of chosen challenge</title>
+    <title>Challenge 1(Phonie)</title>  
 
     <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="./newtwo/css/all.css">
@@ -12,7 +12,7 @@
 <body> 
      <header>
         <h1>circle-93 Phonie</h1>
-        <nav role="menu" data-visible="false">
+        <nav data-visible="false">
             <ul class="nav">
 
                 <li class="link"><a href="#about" class="navlink">About</a></li>
@@ -21,7 +21,7 @@
                 <li class="link"><a href="#contact" class="navlink">contact</a></li>
             </ul>
         </nav>
-        <button aria-expanded="false" role="menubar" class="mobile-nav"><span class="sr-only">menu</span></button>
+        <button aria-expanded="false" role="menu" class="mobile-nav"><span class="sr-only" role="menu">menu</span></button>
     </header>
     <div class="container">
         <div class="about" id="about">
@@ -51,12 +51,12 @@
         <div class="telecom-mtn" id="verify">
             <h4>Verify simcard Telecom carrier</h4>
             <div class="ver-con">
-                <img src="./images/Collaboration-pana.svg" alt="" class="colba">
+                <img src="./images/Collaboration-pana.svg" alt="a man and woman matching a puzzel" class="colba">
                 <div class="telecomm">
-                    <button class="mtn-btn tele"></button>
-                    <button class="glo-btn tele"></button>
-                    <button class="airtel-btn tele"></button>
-                    <button class="eti-btn tele"></button>
+                    <button class="mtn-btn tele"><span class="sr-only">mtn</span></button>
+                    <button class="glo-btn tele"><span class="sr-only">glo</span></button>
+                    <button class="airtel-btn tele"><span class="sr-only">airtel</span></button>
+                    <button class="eti-btn tele"><span class="sr-only">9mobile</span></button>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                 <label for="telphonenumber">Enter a MTN number</label>
                 <div class="space">
                     <input class="input" type="tel" name="telphonenumber" id="telphonenumber" inputmode="tel"
-                        autocomplete="off" pattern="(\+234|234|0)(803|806|814|810|813|814|816|703|706|903|906)[0-9]{7}"
+                        autocomplete="on" pattern="(\+234|234|0)(803|806|814|810|813|814|816|703|706|903|906)[0-9]{7}"
                         list="form-list" required>
                     <input type="submit" value="Submit" class="verify-btn">
                 </div>
@@ -124,7 +124,7 @@
                 <label for="telphonenumber">Enter a GLO number</label>
                 <div class="space">
                     <input class="input" type="tel" name="telphonenumber" id="glophonenumber" inputmode="tel"
-                        autocomplete="off" pattern="(\+234|234|0)(805|807|811|815|705|905)[0-9]{7}" list="glo-list"
+                        autocomplete="on" pattern="(\+234|234|0)(805|807|811|815|705|905)[0-9]{7}" list="glo-list"
                         required>
                     <input type="submit" value="Submit" class="verify-btn">
                 </div>
@@ -169,7 +169,7 @@
                 <label for="telphonenumber">Enter an AIRTEL number</label>
                 <div class="space">
                     <input class="input" type="tel" name="telphonenumber" id="airphonenumber" inputmode="tel"
-                        autocomplete="off" pattern="(\+234|234|0)(802|808|812|708|701|902|901|907|912)[0-9]{7}"
+                        autocomplete="on" pattern="(\+234|234|0)(802|808|812|708|701|902|901|907|912)[0-9]{7}"
                         list="airtel-list" required>
                     <input type="submit" value="Submit" class="verify-btn">
                 </div>
@@ -219,7 +219,7 @@
                 <label for="telphonenumber">Enter a 9mobile number</label>
                 <div class="space">
                     <input class="input" type="tel" name="telphonenumber" id="etiphonenumber" inputmode="tel"
-                        autocomplete="off" pattern="(\+234|234|0)(809|817|818|908|909)[0-9]{7}" list="9mobile-list"
+                        autocomplete="on" pattern="(\+234|234|0)(809|817|818|908|909)[0-9]{7}" list="9mobile-list"
                         required>
                     <input type="submit" value="Submit" class="verify-btn">
                 </div>
@@ -250,7 +250,7 @@
         </form>
         <div id="subscribe">
            
-            <img src="./images/Subscriber-pana.svg" alt="" class="sub-img">
+            <img src="./images/Subscriber-pana.svg" alt="a cartoon character pointing to a subscribe button" class="sub-img">
         
             <h5 class="sign">Subscribe for newsettlers</h5>
             <form class="subscribe form-style">
@@ -264,7 +264,7 @@
                 <label for="phonenumber">PHONE NUMBER <span class="invalid-text"></span></label>
                 <input type="tel" name="phonenumber" id="phonenumber" class="margin-btn"
                     pattern="(\+234|234|0)(803|806|814|810|813|814|816|703|706|903|906|809|817|818|908|909|805|807|811|815|705|905|802|808|812|708|701|902|901|907)[0-9]{7}"
-                    required autocomplete="off">
+                    required autocomplete="on">
 
 
                 <input type="submit" value="Subscribe" class="btn">
@@ -273,17 +273,17 @@
         </div>
         <div id="contact">
             <div class="member">
-                <img src="./images/minaaa.jpeg" alt="" class="avatar">
+                <img src="./images/minaaa.jpeg" alt="ibimina avatar" class="avatar">
                 <div class="details">
                     <p class="name">Ibimina Hart</p>
                     <p class="track">frontend developer</p>
                     <p class="position">Team Lead</p>
                     <div class="social">
                         <a href="https://linkedin.com/in/ibimina-hart" target="_blank"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/ibimina-hart" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="mailto: ibimina.c.hart@gmail" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="https://twitter.com/ibiminaaH" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                                class="fa-brands fa-linkedin"></i><span class="sr-only">ibimina's linkedin url</span></a>
+                        <a href="https://github.com/ibimina-hart" target="_blank"><i class="fab fa-github"></i><span class="sr-only">ibimina's github url</span></a>
+                        <a href="mailto: ibimina.c.hart@gmail" target="_blank"><i class="fa-solid fa-envelope"></i><span class="sr-only">ibimina's email</span></a>
+                        <a href="https://twitter.com/ibiminaaH" target="_blank"><i class="fa-brands fa-twitter"></i><span class="sr-only">ibimina's twitter url</span></a>
                     </div>
                 </div>
             </div>
@@ -297,11 +297,11 @@
                     <p class="position">Team Member</p>
                     <div class="social">
 
-                        <a href="https://github.com/Marysule38" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/Marysule38" target="_blank"><i class="fab fa-github"></i><span class="sr-only">mary's github url</span></a>
                         <a href="mailto: annabelmary38@gmail.com" target="_blank"><i
-                                class="fa-solid fa-envelope"></i></a>
+                                class="fa-solid fa-envelope"></i><span class="sr-only">mary's email</span></a>
                         <a href="https://mobile.twitter.com/_sulemary" target="_blank"><i
-                                class="fa-brands fa-twitter"></i></a>
+                                class="fa-brands fa-twitter"></i><span class="sr-only">mary's twitter url</span></a>
                     </div>
                 </div>
 
@@ -314,8 +314,8 @@
                     <p class="position">Team Member</p>
                     <div class="social">
 
-                        <a href="https://github.com/lollipopcodes" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="mailto: eshe2012@yahoo.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://github.com/lollipopcodes" target="_blank"><i class="fab fa-github"></i><span class="sr-only">eshe's email</span></a>
+                        <a href="mailto: eshe2012@yahoo.com" target="_blank"><i class="fa-solid fa-envelope"></i><span class="sr-only">eshe's email</span></a>
                        
                     </div>
                 </div>
@@ -330,11 +330,9 @@
                     <p class="position">Team Member</p>
                     <div class="social">
 
-                        <a href="https://github.com/Kezmandre/" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="mailto: Kazeemquadri75@gmail.com" target="_blank"><i
-                                class="fa-solid fa-envelope"></i></a>
-                        <a href="https://twitter.com/kezman_dre?t=YOH-jFWN7ZO-OxB_lUz-yg&s=09" target="_blank"><i
-                                class="fa-brands fa-twitter"></i></a>
+                        <a href="https://github.com/Kezmandre/" target="_blank"><i class="fab fa-github"></i><span class="sr-only">kazeem's github url</span></a>
+                        <a href="mailto: Kazeemquadri75@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i><span class="sr-only">kazeem's email</span></a>
+                        <a href="https://twitter.com/kezman_dre?t=YOH-jFWN7ZO-OxB_lUz-yg&s=09" target="_blank"><i class="fa-brands fa-twitter"></i><span class="sr-only">kazeem's twitter handle</span></a>
                     </div>
                 </div>
             </div>
@@ -346,11 +344,11 @@
                     <p class="position">Team Member</p>
                     <div class="social">
 
-                        <a href="https://github.com/obimbiyo" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/obimbiyo" target="_blank"><i class="fab fa-github"></i><span class="sr-only">obiyo's github url</span></a>
                         <a href="mailto: obiyoonyekwo@gmail.com" target="_blank"><i
-                                class="fa-solid fa-envelope"></i></a>
+                                class="fa-solid fa-envelope"></i><span class="sr-only">obiyo's email</span></a>
                         <a href="https://twitter.com/OOnyekwo?t=q54CsIytEEo9r0mjeKzqug&s=09" target="_blank"><i
-                                class="fa-brands fa-twitter"></i></a>
+                                class="fa-brands fa-twitter"></i><span class="sr-only">obiyo's twitter url</span></a>
                     </div>
                 </div>
 
@@ -363,10 +361,10 @@
                     <p class="position">Team Member</p>
                     <div class="social">
                         <a href="http://linkedin.com/in/sunday-famous-450694156" target="_blank"><i
-                                class="fa-brands fa-linkedin"></i></a>
-                        <a href="http://github.com/kperusi" target="_blank"><i class="fab fa-github"></i></a>
+                                class="fa-brands fa-linkedin"></i><span class="sr-only">famous's linkedin url</span></a>
+                        <a href="http://github.com/kperusi" target="_blank"><i class="fab fa-github"></i><span class="sr-only">famous's github url</span></a>
                         <a href="mailto: sundayfamous25@yahoo.com" target="_blank"><i
-                                class="fa-solid fa-envelope"></i></a>
+                                class="fa-solid fa-envelope"></i><span class="sr-only">famous's email</span></a>
 
                     </div>
                 </div>
@@ -380,9 +378,9 @@
                     <p class="position">Team Member</p>
                     <div class="social">
 
-                        <a href="https://github.com/feladev123" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/feladev123" target="_blank"><i class="fab fa-github"></i><span class="sr-only">tawio's github url</span></a>
                         <a href="mailto: taiwoakinfenwa2019@gmail.com" target="_blank"><i
-                                class="fa-solid fa-envelope"></i></a>
+                                class="fa-solid fa-envelope"></i><span class="sr-only">tawio's email</span></a>
                     </div>
                 </div>
             </div>
