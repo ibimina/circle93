@@ -31,15 +31,13 @@ const matchBtn = document.querySelector(".match-btn");
   
   matchPage.classList.add("display"); 
   
-  forms[0].classList.remove("display");
- 
-
   telecomBtns[0].classList.add("active");
 
   forms.forEach((form) => {
   form.classList.add("display");
 });
-  
+
+  forms[0].classList.remove("display");
  //mobile navigation segment 
 mobileToggle.addEventListener("click", (e) => {
   e.preventDefault();
